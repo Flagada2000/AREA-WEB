@@ -3,12 +3,7 @@ import { relative } from "path";
 import React from "react";
 import { PiAlienDuotone } from "react-icons/pi";
 import { Button, Checkbox, CheckboxProps, Input, styled } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
-
-interface LoginProps {
-  children: React.ReactNode;
-}
 
 const BpIcon = styled("span")(({ theme }) => ({
   borderRadius: 3,
@@ -74,7 +69,7 @@ function BpCheckbox(props: CheckboxProps) {
   );
 }
 
-function page({ children }: LoginProps) {
+function page() {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   return (
