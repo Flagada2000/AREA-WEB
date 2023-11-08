@@ -9,9 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'layered-peaks': "url('/public/layered-peaks.svg')",
+      },
+      colors: {
+        "login-card": '#3B276E',
+      },
+      animation: {
+        'spin-slow': 'spin 25s linear infinite',
+        'spin-veryslow': 'spin 60s linear infinite',
       },
     },
   },
