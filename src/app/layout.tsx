@@ -23,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="bg-[url('/layered-peaks-haikei.svg')] bg-no-repeat bg-cover bg-center h-screen">
+        <div className='h-16'>
+          <p className='inline-block ml-3 mt-1 w-32 text-7xl font-semibold hover:tracking-widerer duration-300'>AERA</p>
+        </div>
+        <div className="">
           {children}
 
         </div>

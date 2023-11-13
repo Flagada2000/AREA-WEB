@@ -75,59 +75,50 @@ function page() {
   return (
     <>
       <div className="w-full flex flex-col items-center">
-        <div className="flex flex-col items-center mt-28 text-xl font-semibold gap-5">
-          <PiAlienDuotone color="#00fc71" size={60} />
+        <div className="flex flex-col items-center mt-8 text-xl font-semibold gap-5">
+          {/* <PiAlienDuotone color="#00fc71" size={60} /> */}
           <p className="">Sign in to your account</p>
         </div>
-        <div className="relative flex flex-col items-center mt-9 w-1/4 h-[70%]">
-          <div className="absolute inset-0 bg-indigo-700 blur-lg"></div>
+        <div className="relative flex flex-col items-center mt-9 w-2/3 h-[70%]">
           <div className="absolute triangle bottom-8 right-5 blur-[6px] animate-spin-veryslow"></div>
-          <div className="text-gradient w-full h-full p-14 rounded-md drop-shadow-lg">
-            <div>
-              <p>Email address</p>
-              <Input
-                className=" w-full h-8 bg-white/5 rounded-md border-white caret-white"
-                type="email"
-                sx={{
-                  ":before": { borderBottomColor: "white" },
-                  ":hover": { borderBottomColor: "white" },
-                }}
-              />
-            </div>
-            <div className="mt-8 mb-8">
-              <p>Password</p>
-              <Input
-                className="w-full h-8 bg-white/5 rounded-md border-white caret-white"
-                type="password"
-                sx={{
-                  ":before": { borderBottomColor: "white" },
-                  ":hover": { borderBottomColor: "white" },
-                }}
-              />
-            </div>
-            <div className="flex flex-row items-center justify-between mb-8">
-              <div className="flex flex-rox items-center text-sm -ml-2">
-                <BpCheckbox />
-                <p>Remember me</p>
+          <div className="flex flex-row space-x-2 text-gradient w-full h-full p-14 rounded-md neon-indigo">
+            <div className="w-100% md:w-1/2">
+              <div>
+                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Email address
+                </label>
+                <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-md p-2.5 shadow-lg border-2 border-violet-500 hover:neon-violet hover:border-white delay-200 focus:ring-violet-800 focus:border-violet-800 " placeholder="john.doe@company.com" required/>
               </div>
-              <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">
-                <p className="text-blue-500">Forgot password ?</p>
-              </Link>
+              <div className="mt-8 mb-8">
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Password
+                </label>
+                <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-md p-2.5 shadow-lg border-2 border-violet-500 hover:neon-violet hover:border-white delay-200 focus:ring-violet-800 focus:border-violet-800 " placeholder="john.doe@company.com" required/>
+              </div>
+              <div className="flex flex-row items-center justify-between mb-8">
+                <div className="flex flex-rox items-center text-sm -ml-2">
+                  <BpCheckbox />
+                  <p>Remember me</p>
+                </div>
+                <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">
+                  <p className="text-blue-500">Forgot password ?</p>
+                </Link>
+              </div>
+              <div className="flex flex-col items-center gap-5">
+              <hr className="border-white-50 border w-2/3 mb-3" />
+                <button className="text-gradient hover:bg-indigo-700 py-1 px-6 rounded-md neon-violet">
+                  Sign
+                </button>
+                <p>
+                  Don't have an account ?{" "}
+                  <span className="text-blue-500">Sign up</span>
+                </p>
+              </div>
+              <div className="absolute w-28 h-28 -top-16 -left-16 bg-slate-400/40 blur-[6px] brightness-125 rounded-2xl animate-spin-slow"></div>
             </div>
-            <div className="flex flex-col items-center gap-5">
-            <hr className="border-white-50 border w-2/3 mb-3" />
-              <Button
-                variant="contained"
-                className="bg-transparent border-solid border border-white hover:bg-white/25 w-full"
-              >
-                Sign
-              </Button>
-              <p>
-                Don't have an account ?{" "}
-                <span className="text-blue-500">Sign up</span>
-              </p>
-            </div>
-            <div className="absolute w-28 h-28 -top-16 -left-16 bg-slate-400/40 blur-[6px] brightness-125 rounded-2xl animate-spin-slow"></div>
+              <div className="hidden md:flex w-1/2 h-auto items-center " >
+                <p className="inline-block ml-2 uppercase lg:text-5xl sm:text-4xl hover:leading-snug duration-300">Réinventez l'intégration numérique.</p>
+              </div>
           </div>
         </div>
       </div>
