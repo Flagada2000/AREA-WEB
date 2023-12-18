@@ -76,42 +76,43 @@ function page() {
     <>
       <div className="w-full flex flex-col items-center">
         <div className="flex flex-col items-center mt-8 text-xl font-semibold gap-5">
-          {/* <PiAlienDuotone color="#00fc71" size={60} /> */}
-          <p className="">Sign in to your account</p>
+          <p className="">Connexion</p>
         </div>
         <div className="relative flex flex-col items-center mt-9 w-2/3 h-[70%]">
           <div className="absolute triangle bottom-8 right-5 blur-[6px] animate-spin-veryslow"></div>
           <div className="flex flex-row space-x-2 text-gradient w-full h-full p-14 rounded-md neon-indigo">
             <div className="w-100% md:w-1/2">
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Email address
+                <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
+                  Adresse e-mail
                 </label>
                 <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-md p-2.5 shadow-lg border-2 border-violet-500 hover:neon-violet hover:border-white delay-200 focus:ring-violet-800 focus:border-violet-800 " placeholder="john.doe@company.com" required/>
               </div>
               <div className="mt-8 mb-8">
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Password
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
+                  Mot de passe
                 </label>
                 <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-md p-2.5 shadow-lg border-2 border-violet-500 hover:neon-violet hover:border-white delay-200 focus:ring-violet-800 focus:border-violet-800 " placeholder="john.doe@company.com" required/>
               </div>
               <div className="flex flex-row items-center justify-between mb-8">
                 <div className="flex flex-rox items-center text-sm -ml-2">
                   <BpCheckbox />
-                  <p>Remember me</p>
+                  <p>Se rappeler de moi</p>
                 </div>
                 <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">
-                  <p className="text-blue-500">Forgot password ?</p>
+                  <p className="text-blue-500">Mot de passe oublié ?</p>
                 </Link>
               </div>
               <div className="flex flex-col items-center gap-5">
               <hr className="border-white-50 border w-2/3 mb-3" />
-                <button className="text-gradient hover:bg-indigo-700 py-1 px-6 rounded-md neon-violet">
-                  Sign
-                </button>
+                  <button className="text-gradient hover:bg-indigo-700 py-1 px-6 rounded-md neon-violet">
+                    Se connecter
+                  </button>
                 <p>
-                  Don't have an account ?{" "}
-                  <span className="text-blue-500">Sign up</span>
+                  Pas de compte ?{" "}
+                  <Link href='/signup'>
+                    <span className="text-blue-500">S'inscrire</span>
+                  </Link>
                 </p>
               </div>
               <div className="absolute w-28 h-28 -top-16 -left-16 bg-slate-400/40 blur-[6px] brightness-125 rounded-2xl animate-spin-slow"></div>
