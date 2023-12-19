@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, verify that you have the right Node.js version :
+```
+nvm use v18.17.0
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
