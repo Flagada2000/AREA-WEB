@@ -35,9 +35,6 @@ export default function RootLayout({
             <Link href="/home">
               <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
             </Link>
-            <Link href="/about">
-              <p className="text-blue-100 text-base font-medium hover:text-blue-300">À propos</p>
-            </Link>
             <Link href="/doc">
               <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
             </Link>
