@@ -28,35 +28,35 @@ export default function RootLayout({
       <div className="w-full flex flex-col items-center">
         <div className="flex justify-between items-center w-full h-[8%] px-12 pt-5 pb-5 bg-gradient-to-r from-[rgba(1, 8, 17, 0.70)] to-[rgba(0, 26.25, 129.62, 0.70)] shadow-md backdrop-blur-[100px]">
           <Link href="/home">
-            <p className="text-blue-100 text-3xl font-bold font-inter">AREA</p>
+            <p className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
           </Link>
           <div className="flex items-center space-x-20">
 
             <Link href="/home">
-              <p className="text-blue-100 text-base font-medium">Accueil</p>
+              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
             </Link>
             <Link href="/about">
-              <p className="text-blue-100 text-base font-medium">À propos</p>
+              <p className="text-blue-100 text-base font-medium hover:text-blue-300">À propos</p>
             </Link>
             <Link href="/doc">
-              <p className="text-blue-100 text-base font-medium">Documentation</p>
+              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
             </Link>
             <Link href="/contact">
-              <p className="text-blue-100 text-base font-medium">Contact</p>
+              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Contact</p>
             </Link>
 
           </div>
 
           <div className="flex items-center space-x-8">
             <Link href="/create-action">
-              <div className="px-6 py-2 bg-blue-100 rounded-full flex items-center space-x-2">
+              <button className="px-6 py-2 bg-blue-100 rounded-full flex items-center space-x-2 hover:bg-blue-300">
                 <div className="text-blue-700 font-semibold">Créer une Action</div>
-              </div>
+              </button>
             </Link>
             <Link href="/login">
-              <div className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2">
+              <button className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2 hover:from-[#A3C8F8] hover:to-[#1D428F]">
                 <div className="text-blue-100 font-semibold">Profil</div>
-              </div>
+              </button>
             </Link>
           </div>
         </div>
