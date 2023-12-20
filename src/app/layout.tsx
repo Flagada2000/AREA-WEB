@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <>
       <div className="w-full flex flex-col items-center">
-        <div className="flex justify-between items-center w-full h-[8%] px-12 pt-5 pb-5 bg-gradient-to-r from-[rgba(1, 8, 17, 0.70)] to-[rgba(0, 26.25, 129.62, 0.70)] shadow-md backdrop-blur-[100px]">
+        <div className="navbar">
           <Link href="/home">
             <p className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
           </Link>

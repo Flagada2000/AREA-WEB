@@ -24,7 +24,7 @@ function page() {
                 <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-[30px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="john.doe@company.com" required/>
               </div>
               <div className="mt-8 mb-8">
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
+              <label htmlFor="password" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
                   Mot de passe
                 </label>
                 <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-[30px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="Mot de passe" required/>
