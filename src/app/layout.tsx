@@ -24,43 +24,42 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <div className="w-full flex flex-col items-center">
-        <div className="navbar">
-          <Link href="/home">
-            <p className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
-          </Link>
-          <div className="flex items-center space-x-20">
-
+    <html lang="en">
+      <body>
+        <div className="w-full flex flex-col items-center">
+          <div className="navbar">
             <Link href="/home">
-              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
+              <p className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
             </Link>
-            <Link href="/doc">
-              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
-            </Link>
-            <Link href="/contact">
-              <p className="text-blue-100 text-base font-medium hover:text-blue-300">Contact</p>
-            </Link>
-
+            <div className="flex items-center space-x-20">
+              <Link href="/home">
+                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
+              </Link>
+              <Link href="/doc">
+                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
+              </Link>
+              <Link href="/contact">
+                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Contact</p>
+              </Link>
+            </div>
+            <div className="flex items-center space-x-8">
+              <Link href="/create-action">
+                <button className="px-6 py-2 bg-blue-100 rounded-full flex items-center space-x-2 hover:bg-blue-300">
+                  <div className="text-blue-700 font-semibold">Créer une Action</div>
+                </button>
+              </Link>
+              <Link href="/login">
+                <button className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2 hover:from-[#A3C8F8] hover:to-[#1D428F]">
+                  <div className="text-blue-100 font-semibold">Profil</div>
+                </button>
+              </Link>
+            </div>
           </div>
-
-          <div className="flex items-center space-x-8">
-            <Link href="/create-action">
-              <button className="px-6 py-2 bg-blue-100 rounded-full flex items-center space-x-2 hover:bg-blue-300">
-                <div className="text-blue-700 font-semibold">Créer une Action</div>
-              </button>
-            </Link>
-            <Link href="/login">
-              <button className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2 hover:from-[#A3C8F8] hover:to-[#1D428F]">
-                <div className="text-blue-100 font-semibold">Profil</div>
-              </button>
-            </Link>
+          <div className="w-full">
+            {children}
           </div>
         </div>
-        <div className="w-full">
-          {children}
-        </div>
-      </div>
-    </>
+      </body>
+    </html>
   )
 }

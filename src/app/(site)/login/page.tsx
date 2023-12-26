@@ -15,19 +15,19 @@ function page() {
         </div>
         <div className="relative flex flex-col items-center mt-9 w-2/3 h-[70%]">
           <div className="absolute triangle bottom-8 right-5 blur-[6px] animate-spin-veryslow"></div>
-          <div className="flex flex-row space-x-2 text-gradient w-full h-full p-14 rounded-[30px] neon-indigo">
+          <div className="flex flex-row space-x-2 text-gradient w-full h-full p-14 rounded-[33px] neon-indigo">
             <div className="w-100% md:w-1/2">
               <div>
                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
                   Adresse e-mail
                 </label>
-                <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-[30px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="john.doe@company.com" required/>
+                <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="john.doe@company.com" required/>
               </div>
               <div className="mt-8 mb-8">
               <label htmlFor="password" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
                   Mot de passe
                 </label>
-                <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-[30px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="Mot de passe" required/>
+                <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="Mot de passe" required/>
               </div>
               <div className="flex flex-row items-center justify-between mb-8">
                 <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">

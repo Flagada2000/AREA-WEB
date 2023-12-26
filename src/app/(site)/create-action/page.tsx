@@ -17,7 +17,7 @@ export default function CreateAction() {
           <input type="search-action" id="search-action" className="self-stretch h-10 px-5 py-2.5 bg-blue-100 rounded-[999px] justify-start items-center gap-[15px] inline-flex text-blue-800 text-opacity-80 text-base bg-blue-100 font-medium font-inter placeholder-blue-800" placeholder="Rechercher un service"/>
           <div className="self-stretch pb-[30px] justify-center items-start gap-[15px] inline-flex">
               <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau tweet</div>
@@ -27,7 +27,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouvelle photo</div>
@@ -37,7 +37,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Live en direct</div>
@@ -49,7 +49,7 @@ export default function CreateAction() {
                   </div>
               </div>
               <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau message d’un channel</div>
@@ -59,7 +59,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau message d’un channel</div>
@@ -69,7 +69,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau message d’un channel</div>
@@ -92,7 +92,7 @@ export default function CreateAction() {
           <input type="search-reaction" id="search-reaction" className="self-stretch h-10 px-5 py-2.5 bg-blue-100 rounded-[999px] justify-start items-center gap-[15px] inline-flex text-blue-800 text-opacity-80 text-base bg-blue-100 font-medium font-inter placeholder-blue-800" placeholder="Rechercher un service"/>
           <div className="self-stretch pb-[30px] justify-center items-start gap-[15px] inline-flex">
               <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau tweet</div>
@@ -102,7 +102,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouvelle photo</div>
@@ -112,7 +112,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Live en direct</div>
@@ -124,7 +124,7 @@ export default function CreateAction() {
                   </div>
               </div>
               <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Envoyer un message sur Discord</div>
@@ -134,7 +134,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau message d’un channel</div>
@@ -144,7 +144,7 @@ export default function CreateAction() {
                       <div className="text-blue-100 text-xs font-semibold font-inter">Se connecter</div>
                     </button>
                   </div>
-                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[15px] flex">
+                  <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
                     <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
                       <img className="w-6 h-6 rounded-[5px]" src="https://via.placeholder.com/24x24" />
                       <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">Nouveau message d’un channel</div>
@@ -165,7 +165,7 @@ export default function CreateAction() {
       <div className="w-[1148px] h-[900px] p-2.5 flex-col justify-center items-center gap-[30px] inline-flex">
         <div className="action-card-center">
             <div className="text-center text-blue-100 text-3xl font-bold font-inter">Action</div>
-            <div className="w-[460px] h-[180px] bg-blue-100 rounded-[30px] flex-col justify-center items-center flex">
+            <div className="w-[460px] h-[180px] bg-blue-100 rounded-[33px] flex-col justify-center items-center flex">
                 <div className="self-stretch px-2.5 py-[30px] bg-white justify-center items-center gap-[30px] inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                     <img className="w-[30px] h-[30px] rounded-[5px]" src="https://via.placeholder.com/30x30" />
                     <div className="w-80 text-center text-blue-900 text-xl font-bold font-inter">Nouveau tweet</div>
@@ -184,7 +184,7 @@ export default function CreateAction() {
         </div>
         <div className="action-card-center">
             <div className="text-center text-blue-100 text-3xl font-bold font-inter">Réaction</div>
-            <div className="w-[460px] h-[180px] bg-blue-100 rounded-[30px] flex-col justify-center items-center flex">
+            <div className="w-[460px] h-[180px] bg-blue-100 rounded-[33px] flex-col justify-center items-center flex">
                 <div className="self-stretch px-2.5 py-[30px] bg-white justify-center items-center gap-[30px] inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                     <img className="w-[30px] h-[30px] rounded-[5px]" src="https://via.placeholder.com/30x30" />
                     <div className="w-80 text-center text-blue-900 text-xl font-bold font-inter">Envoyer un message sur Discord</div>
@@ -212,7 +212,7 @@ export default function CreateAction() {
                   <div className="text-blue-100 text-3xl font-bold font-inter">Action</div>
               </div>
               <div className="self-stretch h-[269px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[30px] flex-col justify-start items-center flex">
+                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Titre</div>
                       </div>
@@ -220,7 +220,7 @@ export default function CreateAction() {
                           <div className="grow shrink basis-0 text-center text-blue-900 text-base font-bold font-inter">tweet-author</div>
                       </div>
                   </div>
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[30px] flex-col justify-start items-center flex">
+                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Texte </div>
                       </div>
@@ -235,7 +235,7 @@ export default function CreateAction() {
                   <div className="text-blue-100 text-3xl font-bold font-inter">Réaction</div>
               </div>
               <div className="self-stretch h-[396px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[30px] flex-col justify-start items-center flex">
+                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Ajouter une Photo</div>
                       </div>
@@ -246,7 +246,7 @@ export default function CreateAction() {
                           <div className="text-center text-blue-900 text-base font-bold font-inter">Importer</div>
                       </div>
                   </div>
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[30px] flex-col justify-start items-center flex">
+                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Titre </div>
                       </div>
@@ -254,7 +254,7 @@ export default function CreateAction() {
                           <div className="grow shrink basis-0 text-center text-blue-900 text-base font-bold font-inter">Nouveau Tweet de name</div>
                       </div>
                   </div>
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[30px] flex-col justify-start items-center flex">
+                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Texte</div>
                       </div>
