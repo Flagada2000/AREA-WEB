@@ -6,7 +6,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     // Redirect to /home when the component mounts
-    // router.push('/home');
+    router.push('/home');
   }, []);
 
   return (

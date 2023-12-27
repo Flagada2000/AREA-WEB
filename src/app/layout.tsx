@@ -48,7 +48,7 @@ export default function RootLayout({
                   <div className="text-blue-700 font-semibold">Créer une Action</div>
                 </button>
               </Link>
-              <Link href="/login">
+              <Link href="/signin">
                 <button className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2 hover:from-[#A3C8F8] hover:to-[#1D428F]">
                   <div className="text-blue-100 font-semibold">Profil</div>
                 </button>

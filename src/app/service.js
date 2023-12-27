@@ -27,7 +27,6 @@ class APIService {
   signin(data) {
     // Connexion de l'utilisateur
     return this.post('/auth/signin', data)
-    console.log("YOUPI!")
   }
 
   getActionsReactions() {

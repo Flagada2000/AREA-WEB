@@ -30,7 +30,7 @@ function page() {
       if (data.code == 201) {
         let jwtToken = data.session.accessToken;
         localStorage.setItem("jwtToken", jwtToken);
-        window.location.href = "/home";
+        window.location.href = "/profile";
       } else {
         alert(data.message);
       }
@@ -69,7 +69,7 @@ function page() {
                   </button>
                 <p className="text-blue-100">
                   Déjà un compte ?{" "}
-                  <Link href='/login'>
+                  <Link href='/signin'>
                     <span className="text-blue-300">Se connecter</span>
                   </Link>
                 </p>

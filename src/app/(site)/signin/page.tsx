@@ -3,9 +3,39 @@ import { relative } from "path";
 import React from "react";
 import { Button, Checkbox, CheckboxProps, Input, styled } from "@mui/material";
 import Link from "next/link";
+import APIService from "../../service";
 
 function page() {
+  const apiService = new APIService();
+
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const [mailState, setMailState] = React.useState('');
+  const [passwordState, setPasswordState] = React.useState('');
+
+  const handleMailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const mail = e.target.value;
+    setMailState(mail)
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   const password = e.target.value;
+   setPasswordState(password)
+  };
+
+  const handleSubmit = () => {
+    let promise = apiService.signin({email:mailState, password:passwordState});
+    promise.then((res) => {
+      const data = res.data;
+      console.log(data);
+      if (data.code == 201) {
+        let jwtToken = data.session.accessToken;
+        localStorage.setItem("jwtToken", jwtToken);
+        window.location.href = "/profile";
+      } else {
+        alert(data.message);
+      }
+    });
+  };
 
   return (
     <>
@@ -21,22 +51,23 @@ function page() {
                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
                   Adresse e-mail
                 </label>
-                <input type="email" id="email" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="john.doe@company.com" required/>
+                <input onChange={handleMailChange}
+                type="email" id="email" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="john.doe@company.com" required/>
               </div>
               <div className="mt-8 mb-8">
               <label htmlFor="password" className="block mb-2 text-sm font-medium text-blue-100 dark:text-white">
                   Mot de passe
                 </label>
-                <input type="password" id="password" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="Mot de passe" required/>
+                <input onChange={handlePasswordChange}
+                type="password" id="password" className="w-full h-9 bg-white/5 rounded-[33px] p-2.5 shadow-lg border-2 border-blue-200 hover:neon-blue-300 hover:border-white delay-200 focus:ring-blue-800 focus:border-blue-800 placeholder-blue-300" placeholder="Mot de passe" required/>
               </div>
               <div className="flex flex-row items-center justify-between mb-8">
-                <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs">
                   <p className="text-blue-200">Mot de passe oublié ?</p>
-                </Link>
               </div>
               <div className="flex flex-col items-center gap-5">
               <hr className="border-blue-100 border w-2/3 mb-3" />
-                  <button className="px-6 py-2 font-semibold text-blue-100 text-gradient hover:bg-indigo-700 py-1 px-6 rounded-full">
+                  <button onClick={handleSubmit}
+                  className="px-6 py-2 font-semibold text-blue-100 text-gradient hover:bg-indigo-700 py-1 px-6 rounded-full">
                     Se connecter
                   </button>
                 <p className="text-blue-100">
