@@ -23,4 +23,7 @@ Les informations reçues en réponse peuvent ressembler à ceci :
   }
 }
 ```
+
+Retrouvez la doc de l'API ci-joint : https://flagada2000.github.io/area-api-doc/#/Auth/post_auth_signup
+
 ### Todo

@@ -1,6 +1,6 @@
 # AREA WEB
 
-## 04 - Bonnes pratiques
+## 05 - Bonnes pratiques
 Voici quelques recommandations et bonnes pratiques pour le développement front-end :
 
 1. Optimisation des performances :
