@@ -38,8 +38,11 @@ export default function RootLayout({
               <Link href="/doc">
                 <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
               </Link>
-              <Link href="/contact">
-                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Contact</p>
+              <Link href="/profile">
+                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Profil</p>
+              </Link>
+              <Link href="/myactions">
+                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Mes Actions</p>
               </Link>
             </div>
             <div className="flex items-center space-x-8">
@@ -50,7 +53,7 @@ export default function RootLayout({
               </Link>
               <Link href="/signin">
                 <button className="px-6 py-2 bg-gradient-to-r from-[#1D428F] to-[#A3C8F8] rounded-full flex items-center space-x-2 hover:from-[#A3C8F8] hover:to-[#1D428F]">
-                  <div className="text-blue-100 font-semibold">Profil</div>
+                  <div className="text-blue-100 font-semibold">Se connecter</div>
                 </button>
               </Link>
             </div>

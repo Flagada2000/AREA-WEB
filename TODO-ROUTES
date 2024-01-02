@@ -1,0 +1,32 @@
+routes pour le front:
+- pour la connexion ->
+    - on envoie mail et mdp
+    - ils nous renvoie un token et si ça c'est bien connecté (avec code 200, 400 si connexion échouée, 500 si y'a une erreur)
+    - on stocke le token dans le local storage
+    - on redirige vers la home page
+
+- pour la création de compte ->
+    - on envoie mail, mdp
+    - ils nous envoie un token et si ça a bien créé le compte (avec code 200, 400 si création échouée, 500 si y'a une erreur)
+
+- pour la création de la carte d'actions/réactions ->
+    - pour les cartes où le mec il est déjà connecté
+    - le back nous envoie le titre, les logos de l'action et de la réaction
+
+- pour désactiver / réactiver le service ou le supprimer de mes services
+    - lorsqu'on appuie sur un toggle bouton ça envoie une requête au back pour désactiver le service et pareil pour le réactiver
+    - lorsqu'on appuie sur le bouton supprimer ça envoie une requête au back pour supprimer le service
+
+- pour les cartes préfaites "découvrir des actions" ->
+    - lorsqu'on appuie sur le bouton "Ajouter" ça nous connecte
+    - on envoie une requête au back pour ajouter la carte à notre compte
+    - le back nous renvoie un code 200 si ça a bien ajouté la carte à nos actions, 400 si ça a échoué et 500 si y'a une erreur
+
+- pour le profil une route pour modifier les infos (mail, mdp et nom d'utilisateur)
+
+- pour la home page (app) / mesactions (web), une route qui renvoie le nom de l'utilisateur, ses cartes d'actions et les cartes préfaites "découvrir des actions"
+
+- pour la page création ->
+    - une route qui nous envoie toutes les actions (nom, description, logo)
+    - une route qui nous envoie toutes les réactions (nom, description, logo)
+    - une route qui crée une nouvelle carte d'action (avec l'action et la réaction que l'utilisateur aura choisi)

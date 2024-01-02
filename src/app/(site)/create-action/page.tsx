@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faSearch, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 export default function CreateAction() {
@@ -235,17 +235,6 @@ export default function CreateAction() {
                   <div className="text-blue-100 text-3xl font-bold font-inter">Réaction</div>
               </div>
               <div className="self-stretch h-[396px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
-                  <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
-                      <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
-                          <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Ajouter une Photo</div>
-                      </div>
-                      <div className="self-stretch h-[62px] px-[15px] py-2.5 justify-center items-center gap-[15px] inline-flex">
-                          <div className="w-6 h-6 relative">
-                            <FontAwesomeIcon icon={faUpload} className="absolute text-blue-800 text-opacity-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                          </div>
-                          <div className="text-center text-blue-900 text-base font-bold font-inter">Importer</div>
-                      </div>
-                  </div>
                   <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
                       <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                           <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">Titre </div>
