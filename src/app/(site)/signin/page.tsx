@@ -23,18 +23,9 @@ function page() {
   };
 
   const handleSubmit = () => {
-    let promise = apiService.signin({email:mailState, password:passwordState});
-    promise.then((res) => {
-      const data = res.data;
-      console.log(data);
-      if (data.code == 201) {
-        let jwtToken = data.session.accessToken;
-        localStorage.setItem("jwtToken", jwtToken);
-        window.location.href = "/profile";
-      } else {
-        alert(data.message);
-      }
-    });
+    let promise = apiService.signin({email: mailState, password: passwordState});
+
+
   };
 
   return (
