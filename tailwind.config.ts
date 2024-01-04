@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -24,8 +25,8 @@ const config: Config = {
     },
   },
   plugins: [
-    ({ theme, addUtilities }) => { // Notez que nous n'avons pas besoin d'importer plugin de 'postcss'.
-      const neonUtilities = {};
+    ({ theme, addUtilities }: { theme: any, addUtilities: any }) => { // Notez que nous n'avons pas besoin d'importer plugin de 'postcss'.
+      const neonUtilities: { [key: string]: object } = {}; // Add type annotation for neonUtilities
       const colors = theme('colors');
       for (const color in colors) {
         if (typeof colors[color] === 'object' && colors[color]['500'] && colors[color]['700']) {
