@@ -1,7 +1,45 @@
+"use client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faEye, faFile, faLock, faMessage, faPen, faSun } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
+import APIService from '../../../service/service';
+import { useRouter } from 'next/navigation';
+import { User } from '@/types/types';
+import { deleteCookie } from 'cookies-next';
 
-export default function Home() {
+export default function Profile() {
+  const apiService = new APIService();
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>();
+
+  const fetchUserData = async () => {
+    try {
+      const userData = await apiService.me();
+      if (userData) {
+        setUser(userData);
+      } else {
+        router.push('/signin');
+      }
+    } catch (error) {
+      console.error(error);
+      router.push('/signin');
+    }
+  };
+
+  const handleLogout = () => {
+    deleteCookie('accessToken');
+    router.push('/signin');
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  useEffect(() => {
+    console.log(user);
+    console.log(user?.email);
+  }, [user]);
+
   return (
     <div className='w-full flex flex-col items-center'>
       <div className="h-[900px] w-[500px] px-[60px] py-[15px] flex-col justify-center items-center gap-[30px] flex">
@@ -15,7 +53,11 @@ export default function Home() {
               </button>
           </div>
           <div className="flex items-center gap-[15px]">
-            <div className="text-blue-100 text-xl font-bold font-inter">Emma Depierre</div>
+
+          <div className="text-blue-100 text-xl font-bold font-inter">
+            {user ? user.email : "Loading..."}
+          </div>
+
             <button className="group w-4 h-4 relative">
               <FontAwesomeIcon icon={faPen} className="text-blue-100 transform group-hover:text-blue-300" />
             </button>
@@ -25,7 +67,7 @@ export default function Home() {
                   <div className="w-4 h-4 relative">
                         <FontAwesomeIcon icon={faEnvelope} className="text-slate-500 transform" />
                   </div>
-                  <div className="text-slate-500 text-sm font-semibold font-inter">emmadepierre@gmail.com</div>
+                  <div className="text-slate-500 text-sm font-semibold font-inter">{user ? user.email : "Loading..."}</div>
               </button>
               <div className="self-stretch px-5 py-2.5 bg-blue-100 rounded-[999px] justify-between items-center inline-flex hover:bg-blue-200">
                   <div className="h-6 justify-start items-center gap-[15px] flex">
@@ -61,7 +103,7 @@ export default function Home() {
               </button>
           </div>
           <div className="self-stretch h-[0px] border border-blue-900"></div>
-          <button className="text-blue-100 text-sm font-medium font-inter hover:text-blue-300">Se déconnecter</button>
+          <button className="text-blue-100 text-sm font-medium font-inter hover:text-blue-300" onClick={handleLogout}>Se déconnecter</button>
       </div>
     </div>
   )
