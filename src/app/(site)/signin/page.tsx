@@ -3,7 +3,7 @@ import { relative } from "path";
 import React from "react";
 import { Button, Checkbox, CheckboxProps, Input, styled } from "@mui/material";
 import Link from "next/link";
-import APIService from "../../service";
+import APIService from "../../../service/service";
 
 function page() {
   const apiService = new APIService();

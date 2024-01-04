@@ -3,7 +3,7 @@ import { relative } from "path";
 import React from "react";
 import { Button, Checkbox, CheckboxProps, Input, styled } from "@mui/material";
 import Link from "next/link";
-import APIService from "../../service";
+import APIService from "../../../service/service";
 
 function page() {
   const apiService = new APIService();
@@ -23,18 +23,9 @@ function page() {
   };
 
   const handleSubmit = () => {
-    let promise = apiService.signup({email:mailState, password:passwordState});
-    promise.then((res) => {
-      const data = res.data;
-      console.log(data);
-      if (data.code == 201) {
-        let jwtToken = data.session.accessToken;
-        localStorage.setItem("jwtToken", jwtToken);
-        window.location.href = "/profile";
-      } else {
-        alert(data.message);
-      }
-    });
+    let promise = apiService.signup({email: mailState, password: passwordState});
+
+
   };
 
   return (
