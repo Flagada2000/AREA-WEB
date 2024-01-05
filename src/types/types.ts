@@ -47,3 +47,16 @@ export interface SignResponse {
     user: User;
     session: Session;
 }
+
+export interface Action {
+    id: number;
+    service_id: number;
+    action_name: string;
+}
+
+export interface UserAction {
+    id: number;
+    user_id: string;
+    action_id: number;
+    action_config: string;
+}
