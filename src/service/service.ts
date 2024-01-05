@@ -18,17 +18,11 @@ class APIService {
       let response = await this.api.get<SignResponse>('/auth/signin', { params: data });
 
       if (response.data && response.data.session.access_token && response.status === 200) {
-
-        console.log(response.data.session.access_token);
-        setCookie('accessToken', response.data.session.access_token, { httpOnly: false, secure: false, path: '/' });
-
-        let response1 = await this.api.get('/auth/test-token');
-
-        console.log(response1.data);
-
+        return response.data;
+      } else if (response.data && response.status === 401) {
         return response.data;
       } else {
-        return response.data;
+        return null;
       }
     } catch (error) {
       console.error(error);
@@ -41,14 +35,7 @@ class APIService {
       let response = await this.api.post('/auth/signup', data);
 
       if (response.data && response.data.session.access_token && response.status === 201) {
-
         console.log(response.data.session.access_token);
-        setCookie('accessToken', response.data.session.access_token, { httpOnly: false, secure: false, path: '/' });
-
-        let response1 = await this.api.get('/auth/test-token');
-
-        console.log(response1.data);
-
         return response.data;
       } else {
         return response.data;
@@ -58,6 +45,11 @@ class APIService {
       return null;
     }
   }
+
+  async githubSignin() {
+    window.location.href = 'http://localhost:3001/auth/github';
+  }
+
 
   async me(): Promise<User | null> {
     try {
