@@ -1,10 +1,10 @@
 import React from "react";
 
-type ProfileActionCardProps = {
+type CreateActionCardProps = {
   className?: string;
 };
 
-function ProfileActionCard({}: ProfileActionCardProps) {
+function CreateActionCard({}: CreateActionCardProps) {
   return (
     <div className="w-[460px] h-[180px] bg-blue-100 rounded-[33px] flex-col justify-center items-center flex">
       <div className="self-stretch px-2.5 py-[30px] bg-white justify-center items-center gap-[30px] inline-flex rounded-tl-[30px] rounded-tr-[30px]">
@@ -34,4 +34,4 @@ function ProfileActionCard({}: ProfileActionCardProps) {
   );
 }
 
-export default ProfileActionCard;
+export default CreateActionCard;

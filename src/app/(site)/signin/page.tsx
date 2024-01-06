@@ -28,6 +28,10 @@ function page() {
 
   };
 
+  const handleGithub = () => {
+    let promise = apiService.githubSignin();
+  }
+
   return (
     <>
       <div className="w-full flex flex-col items-center">
@@ -56,7 +60,7 @@ function page() {
                   <p className="text-blue-200">Mot de passe oublié ?</p>
               </div>
               <div className="flex flex-col items-center gap-5">
-              <hr className="border-blue-100 border w-2/3 mb-3" />
+                <hr className="border-blue-100 border w-2/3 mb-3" />
                   <button onClick={handleSubmit}
                   className="px-6 py-2 font-semibold text-blue-100 text-gradient hover:bg-indigo-700 py-1 px-6 rounded-full">
                     Se connecter
@@ -67,6 +71,10 @@ function page() {
                     <span className="text-blue-300">S'inscrire</span>
                   </Link>
                 </p>
+                <button onClick={handleGithub}
+                  className="px-6 py-2 font-semibold text-blue-100 text-gradient hover:bg-indigo-700 py-1 px-6 rounded-full">
+                    Github
+                  </button>
               </div>
               <div className="absolute w-28 h-28 -top-16 -left-16 bg-slate-400/40 blur-[6px] brightness-125 rounded-2xl animate-spin-slow"></div>
             </div>
