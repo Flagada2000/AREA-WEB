@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import MainGithubActionCard from "@/components/actions/MainGithubActionCard";
+import ProfileActionCard from "@/components/actions/ProfileActionCard";
 
 export default function CreateAction() {
   return (
@@ -297,7 +297,7 @@ export default function CreateAction() {
           <div className="text-center text-blue-100 text-3xl font-bold font-inter">
             Action
           </div>
-          <MainGithubActionCard />
+          <ProfileActionCard />
         </div>
         <div className="w-6 h-6 relative">
           <FontAwesomeIcon
