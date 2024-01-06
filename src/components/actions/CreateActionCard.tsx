@@ -13,7 +13,7 @@ function CreateActionCard({}: CreateActionCardProps) {
           src="https://via.placeholder.com/30x30"
         />
         <div className="w-80 text-center text-blue-900 text-xl font-bold font-inter">
-          Nouveau tweet
+          Nouveau tweet compo
         </div>
       </div>
       <div className="self-stretch grow shrink basis-0 p-[15px] justify-center items-center gap-[15px] inline-flex">
