@@ -18,6 +18,7 @@ class APIService {
       let response = await this.api.get<SignResponse>('/auth/signin', { params: data });
 
       if (response.data && response.data.session.access_token && response.status === 200) {
+        window.location.href = '/myactions';
         return response.data;
       } else if (response.data && response.status === 401) {
         return response.data;
@@ -35,9 +36,11 @@ class APIService {
       let response = await this.api.post('/auth/signup', data);
 
       if (response.data && response.data.session.access_token && response.status === 201) {
+        window.location.href = '/signin';
         console.log(response.data.session.access_token);
         return response.data;
       } else {
+        window.location.href = '/signin';
         return response.data;
       }
     } catch (error) {
