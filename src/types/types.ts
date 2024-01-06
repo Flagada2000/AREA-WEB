@@ -60,3 +60,11 @@ export interface UserAction {
     action_id: number;
     action_config: string;
 }
+
+export interface Service {
+    id: number;
+    service_name: string;
+    img_url: string;
+    icon_url: string;
+    actions: Action[];
+}
