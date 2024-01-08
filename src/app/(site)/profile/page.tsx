@@ -4,13 +4,14 @@ import { faEnvelope, faEye, faFile, faLock, faMessage, faPen, faSun } from '@for
 import { useEffect, useState } from 'react';
 import APIService from '../../../service/service';
 import { useRouter } from 'next/navigation';
-import { User } from '@/types/types';
+import { User, UserProfile } from '@/types/types';
 import { deleteCookie } from 'cookies-next';
 
 export default function Profile() {
   const apiService = new APIService();
   const router = useRouter();
   const [user, setUser] = useState<User | null>();
+  const [profile, setProfile] = useState<UserProfile | null>();
 
   const fetchUserData = async () => {
     try {
@@ -31,8 +32,21 @@ export default function Profile() {
     router.push('/signin');
   };
 
+  const fetchUserProfile = async () => {
+    try {
+      const userProfile = await apiService.getProfile();
+      console.log(userProfile)
+      if (userProfile) {
+        setProfile(userProfile);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
     fetchUserData();
+    fetchUserProfile();
   }, []);
 
   useEffect(() => {
@@ -40,12 +54,16 @@ export default function Profile() {
     console.log(user?.email);
   }, [user]);
 
+  useEffect(() => {
+    console.log(profile);
+  }, [profile]);
+
   return (
     <div className='w-full flex flex-col items-center'>
       <div className="h-[900px] w-[500px] px-[60px] py-[15px] flex-col justify-center items-center gap-[30px] flex">
           <div className="text-blue-100 text-3xl font-bold font-inter">Profil</div>
           <div className="flex-col justify-start items-center gap-[15px] flex">
-              <img className="w-[120px] h-[120px] relative rounded-[999px]" src="https://via.placeholder.com/120x120" />
+              {profile?.avatar_url ? <img className="w-[120px] h-[120px] relative rounded-[999px]" src={profile.avatar_url}></img> : <p>Loading...</p>}
               <button className="w-[34px] h-[34px] p-1.5 bg-blue-100 rounded-[999px] flex-col justify-center items-center gap-2.5 flex hover:bg-blue-200">
                 <div className="w-4 h-4 relative">
                   <FontAwesomeIcon icon={faPen} className="text-blue-800 transform" />
