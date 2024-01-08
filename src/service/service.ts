@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
 import { setCookie, getCookie } from 'cookies-next';
-import { Action, Reaction, SignResponse, User } from '../types/types';
+import { Action, ActionUserInfo, Reaction, Service, SignResponse, User, UserAction, UserProfile } from '../types/types';
 
 class APIService {
   private api: AxiosInstance;
@@ -53,6 +53,20 @@ class APIService {
     window.location.href = 'http://localhost:3001/auth/github';
   }
 
+  async getProfile(): Promise<UserProfile | null> {
+    try {
+      let response = await this.api.get(`/auth/profile`);
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
 
   async me(): Promise<User | null> {
     try {
@@ -103,6 +117,84 @@ class APIService {
       return [];
     }
   }
+
+  async getAction(id: number): Promise<Action | null> {
+    try {
+      let response = await this.api.get(`/action/${id}`);
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+  async getUserActions(): Promise<UserAction[]> {
+    try {
+      let response = await this.api.get('/action/user');
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  async getService(id: number): Promise<Service | null> {
+    try {
+      console.log(id)
+      let response = await this.api.get(`/service/${id}`);
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+  async getUserActionInfo(): Promise<ActionUserInfo[] | null> {
+    try {
+      const userActions = await this.getUserActions();
+      if (!userActions.length)
+        return [];
+
+      const actionsInfo: ActionUserInfo[] = [];
+
+      for (const userAction of userActions) {
+        const action = await this.getAction(userAction.action_id);
+        console.log(action)
+        const service = action ? await this.getService(action.service_id) : null;
+
+        if (action && service) {
+          actionsInfo.push({
+            id: userAction.id,
+            action_id: userAction.action_id,
+            action_config: userAction.action_config,
+            action: action,
+            service: service,
+          });
+        }
+      }
+      return actionsInfo;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+
 }
 
 export default APIService;
