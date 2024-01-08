@@ -52,6 +52,14 @@ export interface Action {
     id: number;
     service_id: number;
     action_name: string;
+    action_desc: string;
+}
+
+export interface Reaction {
+    id: number;
+    service_id: number;
+    reaction_name: string;
+    reaction_desc: string;
 }
 
 export interface UserAction {

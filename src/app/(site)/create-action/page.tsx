@@ -1,11 +1,37 @@
+"use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CreateActionCard from "@/components/actions/CreateActionCard";
 import ActionCardCreation from "@/components/actions/ActionCardCreation";
 import EditActionCard from "@/components/actions/EditActionCard";
+import { Action, Reaction } from "@/types/types";
+import APIService from "@/service/service";
+import ReactionCardCreation from "@/components/actions/ReactionCardCreation";
 
 export default function CreateAction() {
+  const apiService = new APIService();
+  const [action, setAction] = useState<Action[] | null>(null);
+  const [reaction, setReaction] = useState<Reaction[] | null>(null);
+
+  async function fetchAction() {
+    const action: Action[] = await apiService.getActions();
+    setAction(action);
+  }
+
+  async function fetchReaction() {
+    const reaction: Reaction[] = await apiService.getReactions();
+    setReaction(reaction);
+  }
+
+  useEffect(() => {
+    fetchAction();
+  }, []);
+
+  useEffect(() => {
+    fetchReaction();
+  }, []);
+
   return (
     // LEFT PART
 
@@ -25,109 +51,10 @@ export default function CreateAction() {
           />
           <div className="self-stretch pb-[30px] justify-center items-start gap-[15px] inline-flex">
             <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-              <ActionCardCreation />
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouvelle photo
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Live en direct
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouveau message d’un channel
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouveau message d’un channel
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouveau message d’un channel
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
+              {/* <ActionCardCreation /> */}
+              {action?.map((action) => (
+                <ActionCardCreation action={action} />
+              ))}
             </div>
           </div>
         </div>
@@ -146,109 +73,10 @@ export default function CreateAction() {
           />
           <div className="self-stretch pb-[30px] justify-center items-start gap-[15px] inline-flex">
             <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-              <ActionCardCreation />
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouvelle photo
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Live en direct
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="grow shrink basis-0 flex-col justify-center items-center gap-[15px] inline-flex">
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Envoyer un message sur Discord
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouveau message d’un channel
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
-              <div className="self-stretch px-2.5 py-[15px] bg-blue-100 rounded-[33px] flex-col justify-center items-center gap-[15px] flex">
-                <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                  <img
-                    className="w-6 h-6 rounded-[5px]"
-                    src="https://via.placeholder.com/24x24"
-                  />
-                  <div className="grow shrink basis-0 text-blue-900 text-base font-bold font-inter">
-                    Nouveau message d’un channel
-                  </div>
-                </div>
-                <div className="self-stretch text-slate-500 text-xs font-normal font-inter">
-                  Cette action est activée à chaque partage d'une nouvelle photo
-                  sur ton compte Instagram.
-                </div>
-                <button className="self-stretch p-2.5 bg-blue-900 rounded-[999px] justify-center items-center gap-2.5 inline-flex hover:bg-blue-700">
-                  <div className="text-blue-100 text-xs font-semibold font-inter">
-                    Se connecter
-                  </div>
-                </button>
-              </div>
+              {/* <ActionCardCreation /> */}
+              {reaction?.map((reaction) => (
+                <ReactionCardCreation reaction={reaction} />
+              ))}
             </div>
           </div>
         </div>

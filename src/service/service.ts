@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
 import { setCookie, getCookie } from 'cookies-next';
-import { SignResponse, User } from '../types/types';
+import { Action, Reaction, SignResponse, User } from '../types/types';
 
 class APIService {
   private api: AxiosInstance;
@@ -74,10 +74,34 @@ class APIService {
     }
   }
 
-  getActionsReactions() {
-    // TODO : Récupérer jwt dans le localStorage
-    // TODO Faire une requete GET vers /actions-reactions avec le token dans le header
-    return this.api.get('/actions-reactions')
+  async getActions(): Promise<Action[]> {
+    try {
+      let response = await this.api.get('/action');
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  async getReactions(): Promise<Reaction[]> {
+    try {
+      let response = await this.api.get('/reaction');
+
+      if (response.data && response.status === 200) {
+        return response.data;
+      } else {
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
   }
 }
 
