@@ -1,12 +1,9 @@
 import React from "react";
-import { UserAction, Action } from "@/types/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { ActionUserInfo } from "@/types/types";
 
 type Props = {
   className?: string;
-  action: Action;
-  userAction: UserAction;
+  action: ActionUserInfo
 };
 
 function TrashIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -30,7 +27,7 @@ function TrashIcon(props: React.SVGProps<SVGSVGElement>) {
     )
   }
 
-function MyActionCard({ action, userAction, className }: Props) {
+function MyActionCard({ action, className }: Props) {
   return (
     <div className="h-[319px] w-[319px] justify-center items-center gap-2.5 flex">
       <div className="grow basis-0 self-stretch p-[30px] bg-blue-100 rounded-[30px] flex-col justify-center items-center gap-[30px] inline-flex">
@@ -44,14 +41,14 @@ function MyActionCard({ action, userAction, className }: Props) {
           </label>
         </div>
         <div className="self-stretch text-blue-900 text-3xl font-bold font-inter">
-          {action.action_name}
+          {action.action.action_name}
         </div>
         <div className="self-stretch h-[0px] border border-blue-900"></div>
         <div className="self-stretch justify-start items-center inline-flex">
           <div className="justify-center items-center gap-[15px] flex">
             <img
               className="w-[50px] h-[50px] rounded-[5px]"
-              src="https://via.placeholder.com/50x50"
+              src={action.service.icon_url}
             />
             <img
               className="w-[50px] h-[50px] rounded-[5px]"
