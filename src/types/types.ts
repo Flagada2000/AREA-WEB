@@ -17,6 +17,10 @@ export interface User {
     updated_at: string;
 }
 
+export interface UserProfile {
+    avatar_url: string;
+}
+
 interface Identity {
     identity_id: string;
     id: string;
@@ -46,6 +50,7 @@ interface Session {
 export interface SignResponse {
     user: User;
     session: Session;
+    user_profile: UserProfile;
 }
 
 export interface Action {
@@ -75,4 +80,12 @@ export interface Service {
     img_url: string;
     icon_url: string;
     actions: Action[];
+}
+
+export interface ActionUserInfo {
+    id: number;
+    action_id: number;
+    action_config: string;
+    action: Action;
+    service: Service;
 }
