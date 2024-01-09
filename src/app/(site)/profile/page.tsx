@@ -1,11 +1,12 @@
 "use client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faEye, faFile, faLock, faMessage, faPen, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faCat, faCode, faDeleteLeft, faEnvelope, faEye, faFile, faLock, faMessage, faPen, faSun } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import APIService from '../../../service/service';
 import { useRouter } from 'next/navigation';
 import { User, UserProfile } from '@/types/types';
 import { deleteCookie } from 'cookies-next';
+import ButtonSocial from '@/components/ButtonSocial';
 
 export default function Profile() {
   const apiService = new APIService();
@@ -60,7 +61,10 @@ export default function Profile() {
 
   return (
     <div className='w-full flex flex-col items-center'>
-      <div className="h-[900px] w-[500px] px-[60px] py-[15px] flex-col justify-center items-center gap-[30px] flex">
+      <div className="h-[500px] w-[500px] px-[60px] py-[15px] flex-col justify-center items-center gap-[30px] flex">
+
+
+          {/* ENTÊTE */}
           <div className="text-blue-100 text-3xl font-bold font-inter">Profil</div>
           <div className="flex-col justify-start items-center gap-[15px] flex">
               {profile?.avatar_url ? <img className="w-[120px] h-[120px] relative rounded-[999px]" src={profile.avatar_url}></img> : <p>Loading...</p>}
@@ -80,6 +84,9 @@ export default function Profile() {
               <FontAwesomeIcon icon={faPen} className="text-blue-100 transform group-hover:text-blue-300" />
             </button>
           </div>
+
+
+          {/* 1ERE SECTION */}
           <div className="self-stretch h-[103px] flex-col justify-start items-center gap-[15px] flex">
               <button className="self-stretch px-5 py-2.5 bg-blue-100 rounded-[999px] justify-start items-center gap-[15px] inline-flex hover:bg-blue-200">
                   <div className="w-4 h-4 relative">
@@ -98,8 +105,12 @@ export default function Profile() {
                     <FontAwesomeIcon icon={faEye} className="text-slate-500 transform group-hover:text-blue-300" />
                   </button>
               </div>
-          </div>
-          <div className="self-stretch h-[0px] border border-blue-900"></div>
+              <div className="text-blue-100 text-sm font-semibold font-inter">Réseaux sociaux connectés</div>
+              <ButtonSocial />
+
+
+          {/* 2E SECTION */}
+          <div className="self-stretch h-[1px] border border-blue-900"></div>
           <div className="self-stretch h-[162px] flex-col justify-start items-center gap-[15px] flex">
               <button className="self-stretch px-5 py-2.5 bg-blue-100 rounded-[999px] justify-start items-center gap-[15px] inline-flex hover:bg-blue-200">
                   <div className="w-4 h-4 relative">
@@ -120,8 +131,12 @@ export default function Profile() {
                   <div className="text-slate-500 text-sm font-bold font-inter">Contactez-nous</div>
               </button>
           </div>
+
+
+          {/* DECONNEXION */}
           <div className="self-stretch h-[0px] border border-blue-900"></div>
           <button className="text-blue-100 text-sm font-medium font-inter hover:text-blue-300" onClick={handleLogout}>Se déconnecter</button>
+          </div>
       </div>
     </div>
   )
