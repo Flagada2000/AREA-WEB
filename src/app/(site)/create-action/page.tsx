@@ -8,6 +8,7 @@ import EditActionCard from "@/components/actions/EditActionCard";
 import { Action, Reaction } from "@/types/types";
 import APIService from "@/service/service";
 import ReactionCardCreation from "@/components/actions/ReactionCardCreation";
+import DropdownList from "@/components/actions/DropdownList";
 
 export default function CreateAction() {
   const apiService = new APIService();
@@ -121,6 +122,7 @@ export default function CreateAction() {
           </div>
           <div className="self-stretch h-[269px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
             <EditActionCard />
+            <DropdownList />
             <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
               <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
                 <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">
