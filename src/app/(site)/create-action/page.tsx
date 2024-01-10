@@ -8,7 +8,8 @@ import EditActionCard from "@/components/actions/EditActionCard";
 import { Action, Reaction } from "@/types/types";
 import APIService from "@/service/service";
 import ReactionCardCreation from "@/components/actions/ReactionCardCreation";
-import DropdownList from "@/components/actions/DropdownList";
+import GithubEditAction from "@/components/edit-actions/GithubEditAction";
+import MailEditReaction from "@/components/edit-reactions/MailEditReaction";
 
 export default function CreateAction() {
   const apiService = new APIService();
@@ -114,51 +115,12 @@ export default function CreateAction() {
       {/* RIGHT PART */}
 
       <div className="w-[386px] h-[990px] pl-[30px] py-[30px] flex-col justify-right items-center gap-[30px] inline-flex">
-        <div className="action-card-right">
-          <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-            <div className="text-blue-100 text-3xl font-bold font-inter">
-              Action
-            </div>
-          </div>
-          <div className="self-stretch h-[269px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
-            <EditActionCard />
-            <DropdownList />
-            <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
-              <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
-                <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">
-                  Texte{" "}
-                </div>
-              </div>
-              <div className="self-stretch h-[62px] px-[15px] py-2.5 justify-center items-center gap-[15px] inline-flex">
-                <div className="grow shrink basis-0 text-center text-blue-900 text-base font-bold font-inter">
-                  tweet
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="action-card-right">
-          <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-            <div className="text-blue-100 text-3xl font-bold font-inter">
-              Réaction
-            </div>
-          </div>
-          <div className="self-stretch h-[396px] pb-[30px] flex-col justify-start items-center gap-[15px] flex">
-            <EditActionCard />
-            <div className="w-[300px] h-28 bg-blue-100 rounded-[33px] flex-col justify-start items-center flex">
-              <div className="self-stretch p-2.5 bg-blue-900 justify-center items-center gap-2.5 inline-flex rounded-tl-[30px] rounded-tr-[30px]">
-                <div className="text-blue-100 text-base font-bold font-inter leading-[30px]">
-                  Texte
-                </div>
-              </div>
-              <div className="self-stretch h-[62px] px-[15px] py-2.5 justify-center items-center gap-[15px] inline-flex">
-                <div className="grow shrink basis-0 text-center text-blue-900 text-base font-bold font-inter">
-                  tweet
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* ACTION */}
+        <GithubEditAction />
+
+
+        {/* REACTION */}
+        <MailEditReaction />
       </div>
     </div>
   );

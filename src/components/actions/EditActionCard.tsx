@@ -23,7 +23,7 @@ function EditActionCard ({ }: EditActionCardProps) {
             type="input-text"
             id="input-text"
             className="self-stretch w-[250px] h-10 px-5 py-2.5 bg-blue-100 rounded-[999px] justify-start items-center gap-[15px] inline-flex text-blue-800 text-opacity-80 text-base bg-blue-100 font-medium font-inter placeholder-blue-800"
-            placeholder="title"
+            placeholder="Texte"
             onChange={handleInputChange}
           />
           </div>
