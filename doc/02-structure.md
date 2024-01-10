@@ -32,8 +32,21 @@ Voici une vue d'ensemble de la structure des fichiers et des dossiers du projet 
 │   ├── assets
 │   │   └── img-homepage.png
 │   ├── components
-│   │   ├── Button.tsx
-│   │   └── layered_spike.tsx
+│   │   ├── actions
+│   │   │   ├── ActionCardCreation.tsx
+│   │   │   ├── CreateActionCard.tsx
+│   │   │   ├── DropdownList.tsx
+│   │   │   ├── EditActionCard.tsx
+│   │   │   ├── ListActionCard.tsx
+│   │   │   └── ReactionCardCreation.tsx
+│   │   ├── ButtonSocial.tsx
+│   │   ├── edit-actions
+│   │   │   └── GithubEditAction.tsx
+│   │   ├── edit-reactions
+│   │   │   └── MailEditReaction.tsx
+│   │   ├── layered_spike.tsx
+│   │   ├── MyActionCard.tsx
+│   │   └── MyExplorerCard.tsx
 │   └── pages
 │       └── index.js
 ```
@@ -45,9 +58,9 @@ Le front-end comprend actuellement des composants d'animation pour les pages de 
 ## Routage
 Le site comprend plusieurs pages :
 
-- Une page d'accueil
-- Un lien vers la documentation pour savoir comment créer une action, supprimer, gérer son profil, etc.
-- Une page pour afficher les actions créées par l'utilisateur, avec un explorateur pour ajouter des actions/réactions pré-définies proposées par le site.
-- Une page de connexion et une page d'inscription.
-- Une page de profil.
-- Une page de création d'actions et de réactions, avec des options pour éditer des actions et réactions.
+- Une page d'accueil (/home)
+- Un lien vers la documentation pour savoir comment créer une action, supprimer, gérer son profil, etc. (/doc)
+- Une page pour afficher les actions créées par l'utilisateur, avec un explorateur pour ajouter des actions/réactions pré-définies proposées par le site. (/myactions)
+- Une page de connexion et une page d'inscription. (/signin ; /signup)
+- Une page de profil. (/profile)
+- Une page de création d'actions et de réactions, avec des options pour éditer des actions et réactions. (/create-action)
