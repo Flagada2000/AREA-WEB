@@ -1,50 +1,52 @@
+"use client"
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-import React from "react";
-import Head from "next/head";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import "./navbar.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const metadata: Metadata = {
-  title: "Area 51",
-  description: "The best place to find aliens",
-};
+// export const metadata: Metadata = {
+//   title: "Area 51",
+//   description: "The best place to find aliens",
+// };
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <html lang="en">
       <body>
-        <div className="w-full flex flex-col items-center">
+
+        <div className="navmain">
+
           <div className="navbar">
             <Link href="/home">
-              <p className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
+              <p style={{ position: 'absolute', left: '20px', top: '25px' }} className="text-blue-100 text-3xl font-bold font-inter hover:text-blue-300">AREA</p>
             </Link>
-            <div className="flex items-center space-x-20">
-              <Link href="/home">
-                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
-              </Link>
-              <Link href="/doc">
-                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
-              </Link>
-              <Link href="/profile">
-                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Profil</p>
-              </Link>
-              <Link href="/myactions">
-                <p className="text-blue-100 text-base font-medium hover:text-blue-300">Mes Actions</p>
-              </Link>
-            </div>
+            {/* navigation links */}
+            <ul className={menuOpen ? "open" : ""}>
+              <div className={`navstyle ${menuOpen ? "open" : ""}`}>
+                <Link href="/home">
+                  <p className="text-blue-100 text-base font-medium hover:text-blue-300">Accueil</p>
+                </Link>
+                <Link href="/doc">
+                  <p className="text-blue-100 text-base font-medium hover:text-blue-300">Documentation</p>
+                </Link>
+                <Link href="/profile">
+                  <p className="text-blue-100 text-base font-medium hover:text-blue-300">Profil</p>
+                </Link>
+                <Link href="/myactions">
+                  <p className="text-blue-100 text-base font-medium hover:text-blue-300">Mes Actions</p>
+                </Link>
+              </div>
+            </ul>
+
+            {/* boutons créer une action / se connecter */}
             <div className="flex items-center space-x-8">
               <Link href="/create-action">
                 <button className="px-6 py-2 bg-blue-100 rounded-full flex items-center space-x-2 hover:bg-blue-300">
@@ -56,8 +58,18 @@ export default function RootLayout({
                   <div className="text-blue-100 font-semibold">Se connecter</div>
                 </button>
               </Link>
+              {/* menu hamburger */}
+            <button>
+            <div className="menu" onClick={() => { setMenuOpen(!menuOpen); }}>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+            </button>
+            </div>
+
           </div>
+
           <div className="w-full">
             {children}
           </div>
