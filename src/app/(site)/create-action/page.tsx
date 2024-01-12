@@ -10,6 +10,7 @@ import APIService from "@/service/service";
 import ReactionCardCreation from "@/components/actions/ReactionCardCreation";
 import GithubEditAction from "@/components/edit-actions/GithubEditAction";
 import MailEditReaction from "@/components/edit-reactions/MailEditReaction";
+import MailEditAction from "@/components/edit-actions/MailEditAction";
 
 export default function CreateAction() {
   const apiService = new APIService();
@@ -117,6 +118,7 @@ export default function CreateAction() {
       <div className="w-[386px] h-[990px] pl-[30px] py-[30px] flex-col justify-right items-center gap-[30px] inline-flex">
         {/* ACTION */}
         <GithubEditAction />
+        {/* <MailEditAction /> */}
 
 
         {/* REACTION */}

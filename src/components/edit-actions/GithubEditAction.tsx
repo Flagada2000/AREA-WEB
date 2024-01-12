@@ -40,14 +40,15 @@ function GithubEditAction({ }: GithubEditActionProps) {
 
     // SELECTIONNER UN REPO
     const [selectedItem, setSelectedItem] = useState<ObjectItem | null>(null);
-    const handleSelectItem = (item: ObjectItem) => {
 
-    // Récupérer le nom du repo
-    const repoName = item.label.split("/")[1];
-    const formattedString = `{"repos_id":"${repoName}"}`;
-    console.log(formattedString); // delete later
-    setSelectedItem(item);
-  };
+    const [formattedString, setFormattedString] = useState<string | null>(null);
+
+    const handleSelectItem = (item: ObjectItem) => {
+      const repoName = item.label.split("/")[1];
+      const newFormattedString = `{"repos_id":"${repoName}"}`;
+      setFormattedString(newFormattedString);
+      setSelectedItem(item);
+    };
 
   return (
     <div className="action-card-right">
@@ -83,6 +84,7 @@ function GithubEditAction({ }: GithubEditActionProps) {
               )}
             </DropdownMenu>
           </Dropdown>
+          <p>Input Value: {formattedString}</p>
         </div>
     </div>
   );
