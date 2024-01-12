@@ -84,7 +84,7 @@ function GithubEditAction({ }: GithubEditActionProps) {
               )}
             </DropdownMenu>
           </Dropdown>
-          <p>Input Value: {formattedString}</p>
+          {/* <p>Input Value: {formattedString}</p> */}
         </div>
     </div>
   );
