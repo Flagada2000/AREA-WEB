@@ -13,6 +13,32 @@ import MyActionCard from "@/components/MyActionCard";
 import MyExplorerCard from "@/components/MyExplorerCard";
 
 export default function Home() {
+// HARDCODED DATA
+const action = {
+  id: 1,
+  action_id: 1,
+  action_config: "config",
+  action: {
+    id: 1,
+    service_id: 1,
+    action_name: "Hardcoded Action",
+    action_desc: "Description of the action",
+  },
+  service: {
+    id: 1,
+    service_name: "Service Name",
+    img_url: "https://example.com/service.png",
+    actions: [],
+    icon_url: "https://example.com/icon.png",
+  },
+};
+  //////////////////////////
+
+  const handleModif = (actionId: number) => {
+    // Navigate to the action creation page with the action ID as a query parameter
+    router.push(`/create-action?id=${actionId}`);
+  };
+
   const apiService = new APIService();
   const [user, setUser] = useState<User | null>();
   const [actions, setActions] = useState<ActionUserInfo[]>([]);
@@ -66,9 +92,11 @@ export default function Home() {
         {/* ligne de "mes actions" */}
         <div className="scroll-container">
           <div className="justify-start items-center gap-[30px] inline-flex">
-
+          {handleModif && (
+              <MyActionCard action={action} handleModif={handleModif} />
+            )}
             {actions.map((actionInfo, index) => (
-              <MyActionCard key={index} action={actionInfo} />
+              <MyActionCard key={index} action={actionInfo} handleModif={handleModif}/>
             ))}
 
           </div>
