@@ -41,12 +41,17 @@ Voici une vue d'ensemble de la structure des fichiers et des dossiers du projet 
 │   │   │   └── ReactionCardCreation.tsx
 │   │   ├── ButtonSocial.tsx
 │   │   ├── edit-actions
-│   │   │   └── GithubEditAction.tsx
+│   │   │   ├── GithubEditAction.tsx
+│   │   │   └── MailEditAction.tsx
 │   │   ├── edit-reactions
 │   │   │   └── MailEditReaction.tsx
 │   │   ├── layered_spike.tsx
 │   │   ├── MyActionCard.tsx
-│   │   └── MyExplorerCard.tsx
+│   │   ├── MyExplorerCard.tsx
+│   │   └── notifications
+│   │       ├── NotificationError.tsx
+│   │       ├── NotificationSuccess.tsx
+│   │       └── NotificationWarning.tsx
 │   └── pages
 │       └── index.js
 ```

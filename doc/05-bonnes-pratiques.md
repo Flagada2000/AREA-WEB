@@ -12,11 +12,11 @@ Voici quelques recommandations et bonnes pratiques pour le développement front-
 
 2. Accessibilité :
 
-- Utiliser des balises HTML sémantiques pour structurer votre contenu.
+- Créer un composant pour chaque élement récurrent et trier par catégorie dans le dossier "components"
 - Utiliser des couleurs contrastées pour faciliter la lisibilité.
-- Tester votre site avec des outils d'accessibilité pour détecter les problèmes potentiels.
+- Tester le site avec des outils d'accessibilité pour détecter les problèmes potentiels.
 
 3. Sécurité :
 
 - Utiliser des mécanismes d'authentification et de gestion des sessions sécurisés (JWT).
-- Mettre à jour régulièrement vos dépendances et bibliothèques pour bénéficier des correctifs de sécurité.
+- Mettre à jour régulièrement les dépendances et bibliothèques pour bénéficier des correctifs de sécurité.
