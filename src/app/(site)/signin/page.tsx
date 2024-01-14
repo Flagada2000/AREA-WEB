@@ -4,6 +4,9 @@ import React from "react";
 import { Button, Checkbox, CheckboxProps, Input, styled } from "@mui/material";
 import Link from "next/link";
 import APIService from "../../../service/service";
+import NotificationSuccess from "@/components/notifications/NotificationSuccess";
+import NotificationWarning from "@/components/notifications/NotificationWarning";
+import NotificationError from "@/components/notifications/NotificationError";
 
 function page() {
   const apiService = new APIService();
@@ -35,6 +38,9 @@ function page() {
   return (
     <>
       <div className="w-full flex flex-col items-center">
+        <NotificationSuccess />
+        {/* <NotificationWarning /> */}
+        {/* <NotificationError /> */}
         <div className="flex flex-col items-center mt-8 text-xl font-semibold gap-5">
           <p className="text-blue-100">Connexion</p>
         </div>

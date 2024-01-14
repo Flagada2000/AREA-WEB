@@ -39,6 +39,7 @@ const config: Config = {
       }
       addUtilities(neonUtilities, ['responsive', 'hover']);
     },
-  ],
+      require("tailwindcss-animate")
+],
 };
 export default config
